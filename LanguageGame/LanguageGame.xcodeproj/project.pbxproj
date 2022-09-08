@@ -16,6 +16,7 @@
 		C44A36B528CA4E8700ADA544 /* LanguageGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36B428CA4E8700ADA544 /* LanguageGameTests.swift */; };
 		C44A36BF28CA4E8700ADA544 /* LanguageGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36BE28CA4E8700ADA544 /* LanguageGameUITests.swift */; };
 		C44A36C128CA4E8700ADA544 /* LanguageGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36C028CA4E8700ADA544 /* LanguageGameUITestsLaunchTests.swift */; };
+		C44A36D428CA51A800ADA544 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = C44A36D628CA51A800ADA544 /* en.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		C44A36BA28CA4E8700ADA544 /* LanguageGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanguageGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44A36BE28CA4E8700ADA544 /* LanguageGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageGameUITests.swift; sourceTree = "<group>"; };
 		C44A36C028CA4E8700ADA544 /* LanguageGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C44A36D128CA515300ADA544 /* words.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
+		C44A36D528CA51A800ADA544 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/en.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +102,10 @@
 		C44A369C28CA4E8500ADA544 /* LanguageGame */ = {
 			isa = PBXGroup;
 			children = (
-				C44A369D28CA4E8500ADA544 /* AppDelegate.swift */,
-				C44A369F28CA4E8500ADA544 /* SceneDelegate.swift */,
+				C44A36CD28CA510D00ADA544 /* Application */,
+				C44A36CE28CA511400ADA544 /* Platform */,
+				C44A36CF28CA511D00ADA544 /* Domain */,
 				C44A36A128CA4E8500ADA544 /* ViewController.swift */,
-				C44A36A328CA4E8500ADA544 /* Main.storyboard */,
-				C44A36A628CA4E8700ADA544 /* Assets.xcassets */,
-				C44A36A828CA4E8700ADA544 /* LaunchScreen.storyboard */,
 				C44A36AB28CA4E8700ADA544 /* Info.plist */,
 			);
 			path = LanguageGame;
@@ -125,6 +126,42 @@
 				C44A36C028CA4E8700ADA544 /* LanguageGameUITestsLaunchTests.swift */,
 			);
 			path = LanguageGameUITests;
+			sourceTree = "<group>";
+		};
+		C44A36CD28CA510D00ADA544 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C44A36A328CA4E8500ADA544 /* Main.storyboard */,
+				C44A36D028CA513100ADA544 /* Resource */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		C44A36CE28CA511400ADA544 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		C44A36CF28CA511D00ADA544 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C44A36D028CA513100ADA544 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C44A36D128CA515300ADA544 /* words.json */,
+				C44A36A628CA4E8700ADA544 /* Assets.xcassets */,
+				C44A36A828CA4E8700ADA544 /* LaunchScreen.storyboard */,
+				C44A369F28CA4E8500ADA544 /* SceneDelegate.swift */,
+				C44A369D28CA4E8500ADA544 /* AppDelegate.swift */,
+				C44A36D628CA51A800ADA544 /* en.strings */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C44A36AA28CA4E8700ADA544 /* LaunchScreen.storyboard in Resources */,
+				C44A36D428CA51A800ADA544 /* en.strings in Resources */,
 				C44A36A728CA4E8700ADA544 /* Assets.xcassets in Resources */,
 				C44A36A528CA4E8500ADA544 /* Main.storyboard in Resources */,
 			);
@@ -311,6 +349,14 @@
 				C44A36A928CA4E8700ADA544 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C44A36D628CA51A800ADA544 /* en.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C44A36D528CA51A800ADA544 /* en */,
+			);
+			name = en.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
