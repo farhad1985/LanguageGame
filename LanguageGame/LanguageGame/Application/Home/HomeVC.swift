@@ -70,6 +70,8 @@ class HomeVC: UIViewController {
     }()
 
     // MARK: - Variabels
+    weak var delegateAppCoordinator: AppCoordinatorDelegate?
+    
     private var viewModel: HomeViewModel?
     private var bindings = Set<AnyCancellable>()
     private let margin: CGFloat = 16.0
@@ -208,6 +210,15 @@ class HomeVC: UIViewController {
                 }
             })
             .store(in: &bindings)
+        
+        viewModel?.$isFinished
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { [weak self] isFinished in
+                if isFinished {
+                    self?.delegateAppCoordinator?.stopGame()
+                }
+            })
+            .store(in: &bindings)
     }
 
     private func setWord(_ word: RandomWord?) {
@@ -218,10 +229,12 @@ class HomeVC: UIViewController {
     // MARK: - Selectors
     @objc private func correctTapped() {
         viewModel?.answer(isCorrect: true)
+        viewModel?.restTimer()
     }
 
     @objc private func wrongTapped() {
         viewModel?.answer(isCorrect: false)
+        viewModel?.restTimer()
     }
 }
 
