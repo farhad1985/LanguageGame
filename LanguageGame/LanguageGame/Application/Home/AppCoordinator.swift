@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol AppCoordinatorDelegate: AnyObject {
+    func stopGame()
+}
+
 class AppCoordinator {
     
-    let navigation: UINavigationController
+    private let navigation: UINavigationController
+    private var delegate: AppCoordinatorDelegate?
     
     init(navigation: UINavigationController) {
+        
         self.navigation = navigation
         navigation.view.backgroundColor = .white
     }
@@ -23,6 +29,8 @@ class AppCoordinator {
             let randomWordGameLogic = try DefaultRandomWordLogic(repo: repo)
             let viewModel = HomeViewModel(randomWordGameLogic: randomWordGameLogic)
             let vc = HomeVC(viewModel: viewModel)
+            
+            vc.delegateAppCoordinator = self
             
             navigation.pushViewController(vc, animated: false)
             
@@ -46,5 +54,11 @@ class AppCoordinator {
         alertVC.addAction(actionOK)
         
         navigation.present(alertVC, animated: true)
+    }
+}
+
+extension AppCoordinator: AppCoordinatorDelegate {
+    func stopGame() {
+        exit(0)
     }
 }
