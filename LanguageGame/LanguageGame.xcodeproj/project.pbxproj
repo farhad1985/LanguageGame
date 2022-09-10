@@ -12,7 +12,7 @@
 		C44A36A228CA4E8500ADA544 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36A128CA4E8500ADA544 /* HomeVC.swift */; };
 		C44A36A728CA4E8700ADA544 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44A36A628CA4E8700ADA544 /* Assets.xcassets */; };
 		C44A36AA28CA4E8700ADA544 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C44A36A828CA4E8700ADA544 /* LaunchScreen.storyboard */; };
-		C44A36B528CA4E8700ADA544 /* LanguageGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36B428CA4E8700ADA544 /* LanguageGameTests.swift */; };
+		C44A36B528CA4E8700ADA544 /* RepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36B428CA4E8700ADA544 /* RepositoryTest.swift */; };
 		C44A36BF28CA4E8700ADA544 /* LanguageGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36BE28CA4E8700ADA544 /* LanguageGameUITests.swift */; };
 		C44A36C128CA4E8700ADA544 /* LanguageGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36C028CA4E8700ADA544 /* LanguageGameUITestsLaunchTests.swift */; };
 		C44A36D928CA520B00ADA544 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36D828CA520B00ADA544 /* Word.swift */; };
@@ -28,6 +28,7 @@
 		C44A36F128CC691900ADA544 /* TopScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36F028CC691900ADA544 /* TopScoreView.swift */; };
 		C44A36FD28CC76DE00ADA544 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C44A36FF28CC76DE00ADA544 /* Localizable.strings */; };
 		C44A370128CC9B9A00ADA544 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A370028CC9B9A00ADA544 /* Coordinator.swift */; };
+		C44A370528CCAF5200ADA544 /* MockWordReposiory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A370428CCAF5200ADA544 /* MockWordReposiory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +57,7 @@
 		C44A36A928CA4E8700ADA544 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C44A36AB28CA4E8700ADA544 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C44A36B028CA4E8700ADA544 /* LanguageGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanguageGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C44A36B428CA4E8700ADA544 /* LanguageGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageGameTests.swift; sourceTree = "<group>"; };
+		C44A36B428CA4E8700ADA544 /* RepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTest.swift; sourceTree = "<group>"; };
 		C44A36BA28CA4E8700ADA544 /* LanguageGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanguageGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44A36BE28CA4E8700ADA544 /* LanguageGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageGameUITests.swift; sourceTree = "<group>"; };
 		C44A36C028CA4E8700ADA544 /* LanguageGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		C44A36F028CC691900ADA544 /* TopScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoreView.swift; sourceTree = "<group>"; };
 		C44A36FE28CC76DE00ADA544 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C44A370028CC9B9A00ADA544 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		C44A370428CCAF5200ADA544 /* MockWordReposiory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWordReposiory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +136,8 @@
 		C44A36B328CA4E8700ADA544 /* LanguageGameTests */ = {
 			isa = PBXGroup;
 			children = (
-				C44A36B428CA4E8700ADA544 /* LanguageGameTests.swift */,
+				C44A370328CCAF4B00ADA544 /* Helper */,
+				C44A36B428CA4E8700ADA544 /* RepositoryTest.swift */,
 			);
 			path = LanguageGameTests;
 			sourceTree = "<group>";
@@ -233,6 +236,14 @@
 				C44A370028CC9B9A00ADA544 /* Coordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		C44A370328CCAF4B00ADA544 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C44A370428CCAF5200ADA544 /* MockWordReposiory.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,7 +399,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C44A36B528CA4E8700ADA544 /* LanguageGameTests.swift in Sources */,
+				C44A36B528CA4E8700ADA544 /* RepositoryTest.swift in Sources */,
+				C44A370528CCAF5200ADA544 /* MockWordReposiory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
