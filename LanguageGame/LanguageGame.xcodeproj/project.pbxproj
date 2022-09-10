@@ -9,14 +9,24 @@
 /* Begin PBXBuildFile section */
 		C44A369E28CA4E8500ADA544 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A369D28CA4E8500ADA544 /* AppDelegate.swift */; };
 		C44A36A028CA4E8500ADA544 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A369F28CA4E8500ADA544 /* SceneDelegate.swift */; };
-		C44A36A228CA4E8500ADA544 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36A128CA4E8500ADA544 /* ViewController.swift */; };
-		C44A36A528CA4E8500ADA544 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C44A36A328CA4E8500ADA544 /* Main.storyboard */; };
+		C44A36A228CA4E8500ADA544 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36A128CA4E8500ADA544 /* HomeVC.swift */; };
 		C44A36A728CA4E8700ADA544 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44A36A628CA4E8700ADA544 /* Assets.xcassets */; };
 		C44A36AA28CA4E8700ADA544 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C44A36A828CA4E8700ADA544 /* LaunchScreen.storyboard */; };
 		C44A36B528CA4E8700ADA544 /* LanguageGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36B428CA4E8700ADA544 /* LanguageGameTests.swift */; };
 		C44A36BF28CA4E8700ADA544 /* LanguageGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36BE28CA4E8700ADA544 /* LanguageGameUITests.swift */; };
 		C44A36C128CA4E8700ADA544 /* LanguageGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36C028CA4E8700ADA544 /* LanguageGameUITestsLaunchTests.swift */; };
-		C44A36D428CA51A800ADA544 /* en.strings in Resources */ = {isa = PBXBuildFile; fileRef = C44A36D628CA51A800ADA544 /* en.strings */; };
+		C44A36D928CA520B00ADA544 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36D828CA520B00ADA544 /* Word.swift */; };
+		C44A36DB28CA523700ADA544 /* RandomWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36DA28CA523700ADA544 /* RandomWord.swift */; };
+		C44A36DE28CA532000ADA544 /* WordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36DD28CA532000ADA544 /* WordRepository.swift */; };
+		C44A36E028CA537500ADA544 /* WordListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36DF28CA537500ADA544 /* WordListRepository.swift */; };
+		C44A36E228CA53E700ADA544 /* GameError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36E128CA53E700ADA544 /* GameError.swift */; };
+		C44A36E428CA556B00ADA544 /* DefaultRandomWordLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36E328CA556B00ADA544 /* DefaultRandomWordLogic.swift */; };
+		C44A36E628CA559F00ADA544 /* RandomWordGameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36E528CA559F00ADA544 /* RandomWordGameLogic.swift */; };
+		C44A36EB28CA5B6C00ADA544 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36EA28CA5B6C00ADA544 /* HomeViewModel.swift */; };
+		C44A36ED28CBA88400ADA544 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36EC28CBA88400ADA544 /* AppCoordinator.swift */; };
+		C44A36EE28CC663F00ADA544 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = C44A36D128CA515300ADA544 /* words.json */; };
+		C44A36F128CC691900ADA544 /* TopScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36F028CC691900ADA544 /* TopScoreView.swift */; };
+		C44A36FD28CC76DE00ADA544 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C44A36FF28CC76DE00ADA544 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +50,7 @@
 		C44A369A28CA4E8500ADA544 /* LanguageGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LanguageGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44A369D28CA4E8500ADA544 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C44A369F28CA4E8500ADA544 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C44A36A128CA4E8500ADA544 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C44A36A428CA4E8500ADA544 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C44A36A128CA4E8500ADA544 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		C44A36A628CA4E8700ADA544 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C44A36A928CA4E8700ADA544 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C44A36AB28CA4E8700ADA544 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,7 +60,17 @@
 		C44A36BE28CA4E8700ADA544 /* LanguageGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageGameUITests.swift; sourceTree = "<group>"; };
 		C44A36C028CA4E8700ADA544 /* LanguageGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C44A36D128CA515300ADA544 /* words.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
-		C44A36D528CA51A800ADA544 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/en.strings; sourceTree = "<group>"; };
+		C44A36D828CA520B00ADA544 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		C44A36DA28CA523700ADA544 /* RandomWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWord.swift; sourceTree = "<group>"; };
+		C44A36DD28CA532000ADA544 /* WordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordRepository.swift; sourceTree = "<group>"; };
+		C44A36DF28CA537500ADA544 /* WordListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListRepository.swift; sourceTree = "<group>"; };
+		C44A36E128CA53E700ADA544 /* GameError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameError.swift; sourceTree = "<group>"; };
+		C44A36E328CA556B00ADA544 /* DefaultRandomWordLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRandomWordLogic.swift; sourceTree = "<group>"; };
+		C44A36E528CA559F00ADA544 /* RandomWordGameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomWordGameLogic.swift; sourceTree = "<group>"; };
+		C44A36EA28CA5B6C00ADA544 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C44A36EC28CBA88400ADA544 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C44A36F028CC691900ADA544 /* TopScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoreView.swift; sourceTree = "<group>"; };
+		C44A36FE28CC76DE00ADA544 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +124,6 @@
 				C44A36CD28CA510D00ADA544 /* Application */,
 				C44A36CE28CA511400ADA544 /* Platform */,
 				C44A36CF28CA511D00ADA544 /* Domain */,
-				C44A36A128CA4E8500ADA544 /* ViewController.swift */,
 				C44A36AB28CA4E8700ADA544 /* Info.plist */,
 			);
 			path = LanguageGame;
@@ -131,8 +149,9 @@
 		C44A36CD28CA510D00ADA544 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				C44A36A328CA4E8500ADA544 /* Main.storyboard */,
+				C44A36E928CA5B2A00ADA544 /* Home */,
 				C44A36D028CA513100ADA544 /* Resource */,
+				C44A36EF28CC690200ADA544 /* Widgets */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -140,6 +159,8 @@
 		C44A36CE28CA511400ADA544 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				C44A36DF28CA537500ADA544 /* WordListRepository.swift */,
+				C44A36E328CA556B00ADA544 /* DefaultRandomWordLogic.swift */,
 			);
 			path = Platform;
 			sourceTree = "<group>";
@@ -147,6 +168,8 @@
 		C44A36CF28CA511D00ADA544 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				C44A36D728CA520200ADA544 /* Entities */,
+				C44A36DC28CA52FB00ADA544 /* Usecases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -159,9 +182,46 @@
 				C44A36A828CA4E8700ADA544 /* LaunchScreen.storyboard */,
 				C44A369F28CA4E8500ADA544 /* SceneDelegate.swift */,
 				C44A369D28CA4E8500ADA544 /* AppDelegate.swift */,
-				C44A36D628CA51A800ADA544 /* en.strings */,
+				C44A36FF28CC76DE00ADA544 /* Localizable.strings */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		C44A36D728CA520200ADA544 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C44A36D828CA520B00ADA544 /* Word.swift */,
+				C44A36DA28CA523700ADA544 /* RandomWord.swift */,
+				C44A36E128CA53E700ADA544 /* GameError.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C44A36DC28CA52FB00ADA544 /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				C44A36DD28CA532000ADA544 /* WordRepository.swift */,
+				C44A36E528CA559F00ADA544 /* RandomWordGameLogic.swift */,
+			);
+			path = Usecases;
+			sourceTree = "<group>";
+		};
+		C44A36E928CA5B2A00ADA544 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C44A36EC28CBA88400ADA544 /* AppCoordinator.swift */,
+				C44A36EA28CA5B6C00ADA544 /* HomeViewModel.swift */,
+				C44A36A128CA4E8500ADA544 /* HomeVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C44A36EF28CC690200ADA544 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				C44A36F028CC691900ADA544 /* TopScoreView.swift */,
+			);
+			path = Widgets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,9 +329,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C44A36AA28CA4E8700ADA544 /* LaunchScreen.storyboard in Resources */,
-				C44A36D428CA51A800ADA544 /* en.strings in Resources */,
+				C44A36FD28CC76DE00ADA544 /* Localizable.strings in Resources */,
+				C44A36EE28CC663F00ADA544 /* words.json in Resources */,
 				C44A36A728CA4E8700ADA544 /* Assets.xcassets in Resources */,
-				C44A36A528CA4E8500ADA544 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,8 +356,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C44A36A228CA4E8500ADA544 /* ViewController.swift in Sources */,
+				C44A36ED28CBA88400ADA544 /* AppCoordinator.swift in Sources */,
+				C44A36E628CA559F00ADA544 /* RandomWordGameLogic.swift in Sources */,
+				C44A36EB28CA5B6C00ADA544 /* HomeViewModel.swift in Sources */,
+				C44A36DB28CA523700ADA544 /* RandomWord.swift in Sources */,
+				C44A36E428CA556B00ADA544 /* DefaultRandomWordLogic.swift in Sources */,
+				C44A36DE28CA532000ADA544 /* WordRepository.swift in Sources */,
+				C44A36A228CA4E8500ADA544 /* HomeVC.swift in Sources */,
+				C44A36D928CA520B00ADA544 /* Word.swift in Sources */,
 				C44A369E28CA4E8500ADA544 /* AppDelegate.swift in Sources */,
+				C44A36F128CC691900ADA544 /* TopScoreView.swift in Sources */,
+				C44A36E028CA537500ADA544 /* WordListRepository.swift in Sources */,
+				C44A36E228CA53E700ADA544 /* GameError.swift in Sources */,
 				C44A36A028CA4E8500ADA544 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,14 +405,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C44A36A328CA4E8500ADA544 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C44A36A428CA4E8500ADA544 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C44A36A828CA4E8700ADA544 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -351,12 +413,12 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		C44A36D628CA51A800ADA544 /* en.strings */ = {
+		C44A36FF28CC76DE00ADA544 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C44A36D528CA51A800ADA544 /* en */,
+				C44A36FE28CC76DE00ADA544 /* en */,
 			);
-			name = en.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -485,12 +547,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = K3Q5VWZ2VG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LanguageGame/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -513,12 +575,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = K3Q5VWZ2VG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LanguageGame/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

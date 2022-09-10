@@ -2,3 +2,8 @@
 "wrongAttempts" = "Wrong attempts";
 "correct" = "Correct";
 "wrong" = "Wrong";
+"ok" = "Ok";
+"notResourceError" = "I couldn't find word list";
+"parseWordlist" = "I couldn't parse word list";
+
+
