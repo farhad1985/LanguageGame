@@ -70,7 +70,7 @@ class HomeVC: UIViewController {
     }()
 
     // MARK: - Variabels
-    weak var delegateAppCoordinator: AppCoordinatorDelegate?
+    var delegateAppCoordinator: AppCoordinator?
     
     private var viewModel: HomeViewModel?
     private var bindings = Set<AnyCancellable>()
@@ -186,6 +186,7 @@ class HomeVC: UIViewController {
         ])
     }
     
+    // MARK: - Binding
     private func setupBindings() {
 
         viewModel?.$correctAttempts

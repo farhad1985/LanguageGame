@@ -11,12 +11,12 @@ protocol AppCoordinatorDelegate: AnyObject {
     func stopGame()
 }
 
-class AppCoordinator {
+class AppCoordinator: Coordinator {
     
     private let navigation: UINavigationController
     private var delegate: AppCoordinatorDelegate?
     
-    init(navigation: UINavigationController) {
+    required init(navigation: UINavigationController) {
         
         self.navigation = navigation
         navigation.view.backgroundColor = .white

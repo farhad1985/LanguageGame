@@ -9,7 +9,6 @@ import Foundation
 import Combine
 
 class HomeViewModel {
-    private var randomWordGameLogic: RandomWordGameLogic
     
     @Published var currentWord: RandomWord?
     @Published var correctAttempts: Int = 0
@@ -17,12 +16,14 @@ class HomeViewModel {
     @Published var isFinished: Bool = false
     @Published var secondsRemaining = 0
 
-    var gameTime: Int { return 5 }
-    
-    private var timer: Timer?
+    private let randomWordGameLogic: RandomWordGameLogic
+
+    private let gameTime: Int = 5
     private let totalQuestions = 15
     private let validWrongAttempts = 3
     
+    private var timer: Timer?
+
     init(randomWordGameLogic: RandomWordGameLogic) {
         self.randomWordGameLogic = randomWordGameLogic
     }

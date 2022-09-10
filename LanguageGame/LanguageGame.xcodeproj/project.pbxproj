@@ -27,6 +27,7 @@
 		C44A36EE28CC663F00ADA544 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = C44A36D128CA515300ADA544 /* words.json */; };
 		C44A36F128CC691900ADA544 /* TopScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A36F028CC691900ADA544 /* TopScoreView.swift */; };
 		C44A36FD28CC76DE00ADA544 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C44A36FF28CC76DE00ADA544 /* Localizable.strings */; };
+		C44A370128CC9B9A00ADA544 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A370028CC9B9A00ADA544 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		C44A36EC28CBA88400ADA544 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C44A36F028CC691900ADA544 /* TopScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopScoreView.swift; sourceTree = "<group>"; };
 		C44A36FE28CC76DE00ADA544 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C44A370028CC9B9A00ADA544 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,9 +211,9 @@
 		C44A36E928CA5B2A00ADA544 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				C44A36EC28CBA88400ADA544 /* AppCoordinator.swift */,
-				C44A36EA28CA5B6C00ADA544 /* HomeViewModel.swift */,
+				C44A370228CC9BB800ADA544 /* Coordinator */,
 				C44A36A128CA4E8500ADA544 /* HomeVC.swift */,
+				C44A36EA28CA5B6C00ADA544 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -222,6 +224,15 @@
 				C44A36F028CC691900ADA544 /* TopScoreView.swift */,
 			);
 			path = Widgets;
+			sourceTree = "<group>";
+		};
+		C44A370228CC9BB800ADA544 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C44A36EC28CBA88400ADA544 /* AppCoordinator.swift */,
+				C44A370028CC9B9A00ADA544 /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +373,7 @@
 				C44A36DB28CA523700ADA544 /* RandomWord.swift in Sources */,
 				C44A36E428CA556B00ADA544 /* DefaultRandomWordLogic.swift in Sources */,
 				C44A36DE28CA532000ADA544 /* WordRepository.swift in Sources */,
+				C44A370128CC9B9A00ADA544 /* Coordinator.swift in Sources */,
 				C44A36A228CA4E8500ADA544 /* HomeVC.swift in Sources */,
 				C44A36D928CA520B00ADA544 /* Word.swift in Sources */,
 				C44A369E28CA4E8500ADA544 /* AppDelegate.swift in Sources */,
