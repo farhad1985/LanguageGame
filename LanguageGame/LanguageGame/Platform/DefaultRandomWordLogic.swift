@@ -9,7 +9,7 @@ import Foundation
 
 class DefaultRandomWordLogic: RandomWordGameLogic {
     private var allWords: [Word] = []
-    private var remainingIndexes: [Int] = []
+    private(set) var remainingIndexes: [Int] = []
     private var repo: WordRepository
     
     init(repo: WordRepository) throws {
@@ -40,7 +40,12 @@ class DefaultRandomWordLogic: RandomWordGameLogic {
         self.resetRemainingIndexes()
     }
     
-    private func pickCorrentWordPair() -> Word? {
+    func resetRemainingIndexes()  {
+        let lastIndex = max(self.allWords.count - 1, 0)
+        self.remainingIndexes = Array(0...lastIndex)
+    }
+    
+    func pickCorrentWordPair() -> Word? {
         if remainingIndexes.count == 0 {
             resetRemainingIndexes()
         }
@@ -56,7 +61,7 @@ class DefaultRandomWordLogic: RandomWordGameLogic {
         return nil
     }
     
-    private func pickIncorrentWordPair() -> Word? {
+    func pickIncorrentWordPair() -> Word? {
         if let word1 = allWords.randomElement(), let word2 = allWords.randomElement() {
             if word1.english != word2.english {
                 return Word(english: word1.english,
@@ -68,11 +73,6 @@ class DefaultRandomWordLogic: RandomWordGameLogic {
         }
         
         return nil
-    }
-    
-    private func resetRemainingIndexes()  {
-        let lastIndex = max(self.allWords.count - 1, 0)
-        self.remainingIndexes = Array(0...lastIndex)
     }
     
     private func shouldPickCorrentAnswer() -> Bool {
