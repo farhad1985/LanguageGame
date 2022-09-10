@@ -5,5 +5,5 @@
 "ok" = "Ok";
 "notResourceError" = "I couldn't find word list";
 "parseWordlist" = "I couldn't parse word list";
-
-
+"endGame" = "the Game is over";
+"exit" = "Exit";
