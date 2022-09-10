@@ -30,6 +30,7 @@
 		C44A370128CC9B9A00ADA544 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A370028CC9B9A00ADA544 /* Coordinator.swift */; };
 		C44A370528CCAF5200ADA544 /* MockWordReposiory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A370428CCAF5200ADA544 /* MockWordReposiory.swift */; };
 		C44A370928CCB3B500ADA544 /* DefaultRandomWordLogicTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A370828CCB3B500ADA544 /* DefaultRandomWordLogicTest.swift */; };
+		C44A370C28CCC78A00ADA544 /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A370B28CCC78A00ADA544 /* HomeViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		C44A370028CC9B9A00ADA544 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C44A370428CCAF5200ADA544 /* MockWordReposiory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWordReposiory.swift; sourceTree = "<group>"; };
 		C44A370828CCB3B500ADA544 /* DefaultRandomWordLogicTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRandomWordLogicTest.swift; sourceTree = "<group>"; };
+		C44A370B28CCC78A00ADA544 /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 		C44A36B328CA4E8700ADA544 /* LanguageGameTests */ = {
 			isa = PBXGroup;
 			children = (
+				C44A370A28CCC77800ADA544 /* HomeViewModel */,
 				C44A370328CCAF4B00ADA544 /* Helper */,
 				C44A370628CCB39700ADA544 /* Repo */,
 				C44A370728CCB39E00ADA544 /* Logic */,
@@ -263,6 +266,14 @@
 				C44A370828CCB3B500ADA544 /* DefaultRandomWordLogicTest.swift */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		C44A370A28CCC77800ADA544 /* HomeViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C44A370B28CCC78A00ADA544 /* HomeViewModelTest.swift */,
+			);
+			path = HomeViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +432,7 @@
 				C44A36B528CA4E8700ADA544 /* RepositoryTest.swift in Sources */,
 				C44A370928CCB3B500ADA544 /* DefaultRandomWordLogicTest.swift in Sources */,
 				C44A370528CCAF5200ADA544 /* MockWordReposiory.swift in Sources */,
+				C44A370C28CCC78A00ADA544 /* HomeViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
