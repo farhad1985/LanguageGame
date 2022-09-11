@@ -17,42 +17,24 @@ class AppCoordinator: Coordinator {
     
     private let navigation: UINavigationController
     private var delegate: AppCoordinatorDelegate?
+    private var logicWordGame: RandomWordGameLogic
     
-    required init(navigation: UINavigationController) {
+    required init(navigation: UINavigationController,
+                  logicWordGame: RandomWordGameLogic) {
         
         self.navigation = navigation
-        navigation.view.backgroundColor = .white
+        self.logicWordGame = logicWordGame
     }
     
-    func start() {
-        let repo = WordListRepository()
+    @discardableResult
+    func start() -> UIViewController? {
+        let viewModel = HomeViewModel(randomWordGameLogic: logicWordGame)
+        let vc = HomeVC(viewModel: viewModel)
         
-        do {
-            let randomWordGameLogic = try DefaultRandomWordLogic(repo: repo)
-            let viewModel = HomeViewModel(randomWordGameLogic: randomWordGameLogic)
-            let vc = HomeVC(viewModel: viewModel)
-            
-            vc.delegateAppCoordinator = self
-            
-            navigation.pushViewController(vc, animated: false)
-            
-        } catch {
-            showError(message: error.localizedDescription)
-        }
-    }
-    
-    func showError(message: String) {
-        let alertVC = UIAlertController(title: "",
-                                        message: message,
-                                        preferredStyle: .alert)
+        vc.delegateAppCoordinator = self
         
-        let okTitle = NSLocalizedString("ok", comment: "ok")
-        let actionOK = UIAlertAction(title: okTitle,
-                                     style: .cancel)
-        
-        alertVC.addAction(actionOK)
-        
-        navigation.present(alertVC, animated: true)
+        navigation.pushViewController(vc, animated: false)
+        return vc
     }
 }
 
@@ -75,10 +57,10 @@ extension AppCoordinator: AppCoordinatorDelegate {
                                        style: .default) { _ in
             exit(0)
         }
-
+        
         alertVC.addAction(actionExit)
         alertVC.addAction(actionRestart)
-
+        
         navigation.present(alertVC, animated: true)
     }
     

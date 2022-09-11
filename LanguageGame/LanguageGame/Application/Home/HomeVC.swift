@@ -166,7 +166,7 @@ class HomeVC: UIViewController {
         
         UIView.transition(with: self.translationLabel,
                           duration: TimeInterval(viewModel?.gameTime ?? 0),
-                          options: .curveEaseInOut) { [weak self] in
+                          options: .curveEaseIn) { [weak self] in
             
             self?.translationTopConstraint?.constant = UIScreen.main.bounds.height
             self?.view.layoutIfNeeded()

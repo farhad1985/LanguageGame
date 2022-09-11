@@ -8,9 +8,7 @@
 import UIKit
 
 protocol Coordinator {
-    
-    init(navigation: UINavigationController)
-    
-    func start()
-
+        
+    @discardableResult
+    func start() -> UIViewController? 
 }

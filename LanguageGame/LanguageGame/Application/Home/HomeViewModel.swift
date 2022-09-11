@@ -17,7 +17,7 @@ class HomeViewModel {
     @Published var secondsRemaining = 0
 
 
-    let gameTime: Int = 5
+    let gameTime = 5
     
     var resultMatch: String {
         return "\(NSLocalizedString("yourScore", comment: "yourScore")): \(correctAttempts)"

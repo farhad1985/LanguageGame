@@ -26,7 +26,7 @@ class HomeViewModelTest: XCTestCase {
         let usecase = try DefaultRandomWordLogic(repo: repo)
         let sut = HomeViewModel(randomWordGameLogic: usecase)
         
-        let expectation = self.expectation(description: "testStartGame")
+        let expectation = XCTestExpectation(description: "testStartGame")
 
         sut.$currentWord.sink(receiveValue: { value in
             if value != nil {
@@ -36,7 +36,7 @@ class HomeViewModelTest: XCTestCase {
 
         sut.resetGame()
         
-        waitForExpectations(timeout: 2)
+        wait(for: [expectation], timeout: 2)
 
         XCTAssertNotNil(sut.currentWord, "current word is nil")
         XCTAssertNotNil(sut.currentWord?.english, "english phrase of current word is nil")
@@ -53,7 +53,7 @@ class HomeViewModelTest: XCTestCase {
 
         var word: RandomWord?
         
-        let expectation = self.expectation(description: "testWrongAttemptsCounter")
+        let expectation = XCTestExpectation(description: "testWrongAttemptsCounter")
 
         sut.$wrongAttempts.sink(receiveValue: { value in
             if value > 0 {
@@ -70,12 +70,36 @@ class HomeViewModelTest: XCTestCase {
             }
         }).store(in: &cancellables)
 
-        waitForExpectations(timeout: 2)
+        wait(for: [expectation], timeout: 2)
+
+        XCTAssertTrue(sut.wrongAttempts == 1)
+    }
+    
+    func testTimeoutGame() throws {
+        // arragement
+        let repo = MockWordReposiory()
+        let usecase = try DefaultRandomWordLogic(repo: repo)
+        let sut = HomeViewModel(randomWordGameLogic: usecase)
+
+        let expectation = XCTestExpectation(description: "testTimeoutGame")
+
+        // action
+        sut.resetGame()
+        
+        sut.$wrongAttempts.sink(receiveValue: { value in
+            if value > 0 {
+                expectation.fulfill()
+            }
+
+        }).store(in: &cancellables)
+
+
+        wait(for: [expectation], timeout: TimeInterval(sut.gameTime + 2))
 
         XCTAssertTrue(sut.wrongAttempts == 1)
     }
 
-    
+
     func testCorrectAttemptsCounter() throws {
         let repo = MockWordReposiory()
         let usecase = try DefaultRandomWordLogic(repo: repo)
@@ -85,7 +109,7 @@ class HomeViewModelTest: XCTestCase {
 
         var word: RandomWord?
         
-        let expectation = self.expectation(description: "testCorrectAttemptsCounter")
+        let expectation = XCTestExpectation(description: "testCorrectAttemptsCounter")
 
         sut.$correctAttempts.sink(receiveValue: { value in
             if value > 0 {
@@ -102,7 +126,7 @@ class HomeViewModelTest: XCTestCase {
             }
         }).store(in: &cancellables)
 
-        waitForExpectations(timeout: 2)
+        wait(for: [expectation], timeout: 2)
 
         XCTAssertTrue(sut.correctAttempts == 1)
     }
@@ -112,7 +136,7 @@ class HomeViewModelTest: XCTestCase {
         let usecase = try DefaultRandomWordLogic(repo: repo)
         let sut = HomeViewModel(randomWordGameLogic: usecase)
 
-        let expectation = self.expectation(description: "testGameFinishedWithWrongTry")
+        let expectation = XCTestExpectation(description: "testGameFinishedWithWrongTry")
 
         sut.$isFinished.sink(receiveValue: { value in
             if value == true {
@@ -131,7 +155,7 @@ class HomeViewModelTest: XCTestCase {
 
         sut.resetGame()
 
-        waitForExpectations(timeout: 2)
+        wait(for: [expectation], timeout: 2)
 
         XCTAssertTrue(sut.wrongAttempts == 3)
     }
@@ -141,7 +165,7 @@ class HomeViewModelTest: XCTestCase {
         let usecase = try DefaultRandomWordLogic(repo: repo)
         let sut = HomeViewModel(randomWordGameLogic: usecase)
 
-        let expectation = self.expectation(description: "testGameFinishedWithCorrectTry")
+        let expectation = XCTestExpectation(description: "testGameFinishedWithCorrectTry")
 
         sut.$isFinished.sink(receiveValue: { value in
             if value == true {
@@ -159,7 +183,7 @@ class HomeViewModelTest: XCTestCase {
 
         sut.resetGame()
 
-        waitForExpectations(timeout: 5)
+        wait(for: [expectation], timeout: 5)
 
         XCTAssertTrue(sut.correctAttempts == 15, "\(sut.correctAttempts)")
     }
