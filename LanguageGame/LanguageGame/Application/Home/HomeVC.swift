@@ -75,7 +75,9 @@ class HomeVC: UIViewController {
     private var viewModel: HomeViewModel?
     private var bindings = Set<AnyCancellable>()
     private let margin: CGFloat = 16.0
-        
+    
+    private var translationTopConstraint: NSLayoutConstraint?
+
     // MARK: - initialize
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -107,7 +109,7 @@ class HomeVC: UIViewController {
     
     private func makeTopScore() {
         view.addSubview(topScoreView)
-
+        
         NSLayoutConstraint.activate([
             topScoreView.leadingAnchor.constraint(
                 equalTo: self.view.leadingAnchor),
@@ -118,6 +120,8 @@ class HomeVC: UIViewController {
             topScoreView.topAnchor.constraint(
                 equalTo: self.view.topAnchor,
                 constant: margin),
+            
+            topScoreView.heightAnchor.constraint(equalToConstant: 70)
         ])
     }
 
@@ -126,6 +130,12 @@ class HomeVC: UIViewController {
         self.view.addSubview(wordLabel)
         self.view.addSubview(translationLabel)
 
+        translationTopConstraint = translationLabel
+            .topAnchor
+            .constraint(equalTo: view.topAnchor, constant: 0)
+        
+        translationTopConstraint?.isActive = true
+        
         NSLayoutConstraint.activate([
             wordLabel.leadingAnchor.constraint(
                 equalTo: self.view.leadingAnchor,
@@ -146,10 +156,22 @@ class HomeVC: UIViewController {
             translationLabel.trailingAnchor.constraint(
                 equalTo: self.view.trailingAnchor,
                 constant: -margin),
-            
-            translationLabel.bottomAnchor.constraint(equalTo: wordLabel.topAnchor,
-                                                     constant: -margin)
         ])
+        
+    }
+    
+    private func startAnimation() {
+        
+        UIView.transition(with: self.view,
+                          duration: TimeInterval(viewModel?.gameTime ?? 0),
+                          options: .curveLinear) { [weak self] in
+            
+            self?.translationTopConstraint?.constant = UIScreen.main.bounds.height
+            self?.view.layoutIfNeeded()
+        } completion: { [weak self] _ in
+            self?.translationTopConstraint?.constant = -30
+            self?.view.layoutIfNeeded()
+        }
     }
     
     private func makeButtons() {
@@ -225,6 +247,11 @@ class HomeVC: UIViewController {
     private func setWord(_ word: RandomWord?) {
         translationLabel.text = word?.spanish
         wordLabel.text = word?.english
+        startAnimation()
+    }
+    
+    private func reset() {
+        translationLabel.isHidden = true
     }
 
     // MARK: - Selectors

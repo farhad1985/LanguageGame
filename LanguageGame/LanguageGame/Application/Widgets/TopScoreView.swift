@@ -55,6 +55,8 @@ class TopScoreView: UIView {
         } else {
             wrongLabel.text = "\(NSLocalizedString("wrongAttempts", comment: "wrongAttempts")): \(score)"
         }
+        
+        topStack.layoutIfNeeded()
     }
     
     private func setupView() {

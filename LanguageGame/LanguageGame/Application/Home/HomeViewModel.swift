@@ -16,9 +16,10 @@ class HomeViewModel {
     @Published var isFinished: Bool = false
     @Published var secondsRemaining = 0
 
-    private let randomWordGameLogic: RandomWordGameLogic
 
-    private let gameTime: Int = 5
+    let gameTime: Int = 5
+    
+    private let randomWordGameLogic: RandomWordGameLogic
     private let totalQuestions = 15
     private let validWrongAttempts = 3
     
