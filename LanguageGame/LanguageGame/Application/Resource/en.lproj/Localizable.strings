@@ -7,3 +7,5 @@
 "parseWordlist" = "I couldn't parse word list";
 "endGame" = "the Game is over";
 "exit" = "Exit";
+"restart" = "Restart";
+"yourScore" = "Your Score";

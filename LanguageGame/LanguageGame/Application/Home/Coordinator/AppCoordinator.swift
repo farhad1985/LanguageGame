@@ -8,7 +8,9 @@
 import UIKit
 
 protocol AppCoordinatorDelegate: AnyObject {
-    func stopGame()
+    typealias RestartGame = (UIAlertAction) -> ()
+    
+    func gameFinished(message: String, completion: @escaping RestartGame)
 }
 
 class AppCoordinator: Coordinator {
@@ -58,7 +60,29 @@ class AppCoordinator: Coordinator {
 }
 
 extension AppCoordinator: AppCoordinatorDelegate {
-    func stopGame() {
-        exit(0)
+    
+    func gameFinished(message: String, completion: @escaping RestartGame) {
+        let endGameTitle = NSLocalizedString("endGame", comment: "end game")
+        
+        let alertVC = UIAlertController(title: endGameTitle,
+                                        message: message,
+                                        preferredStyle: .alert)
+        
+        let okTitle = NSLocalizedString("restart", comment: "restart")
+        let actionRestart = UIAlertAction(title: okTitle,
+                                          style: .default,
+                                          handler: completion)
+        
+        let exitTitle = NSLocalizedString("exit", comment: "exit")
+        let actionExit = UIAlertAction(title: exitTitle,
+                                       style: .default) { _ in
+            exit(0)
+        }
+
+        alertVC.addAction(actionExit)
+        alertVC.addAction(actionRestart)
+
+        navigation.present(alertVC, animated: true)
     }
+    
 }

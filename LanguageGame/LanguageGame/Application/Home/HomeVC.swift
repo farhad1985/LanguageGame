@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 class HomeVC: UIViewController {
-
+    
     // MARK: - Views
     private var wordLabel: UILabel = {
         let lbl = UILabel()
@@ -32,7 +32,7 @@ class HomeVC: UIViewController {
         lbl.font = .systemFont(ofSize: 23.0, weight: .bold)
         return lbl
     }()
-
+    
     private var correctButton: UIButton = {
         let btn = UIButton()
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -68,7 +68,7 @@ class HomeVC: UIViewController {
         topScoreView.translatesAutoresizingMaskIntoConstraints = false
         return topScoreView
     }()
-
+    
     // MARK: - Variabels
     var delegateAppCoordinator: AppCoordinator?
     
@@ -77,13 +77,13 @@ class HomeVC: UIViewController {
     private let margin: CGFloat = 16.0
     
     private var translationTopConstraint: NSLayoutConstraint?
-
+    
     // MARK: - initialize
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -95,13 +95,13 @@ class HomeVC: UIViewController {
         configView()
         setupBindings()
         
-        viewModel?.resetGame()
+        startGame()
     }
     
     // MARK: - Functions
     private func configView() {
         self.view.backgroundColor = .white
-
+        
         makeTopScore()
         makeTranslationRelatedLabels()
         makeButtons()
@@ -121,15 +121,15 @@ class HomeVC: UIViewController {
                 equalTo: self.view.topAnchor,
                 constant: margin),
             
-            topScoreView.heightAnchor.constraint(equalToConstant: 70)
+            topScoreView.heightAnchor.constraint(equalToConstant: 80)
         ])
     }
-
+    
     private func makeTranslationRelatedLabels() {
         
         self.view.addSubview(wordLabel)
         self.view.addSubview(translationLabel)
-
+        
         translationTopConstraint = translationLabel
             .topAnchor
             .constraint(equalTo: view.topAnchor, constant: 0)
@@ -161,6 +161,8 @@ class HomeVC: UIViewController {
     }
     
     private func startAnimation() {
+        translationTopConstraint?.constant = -30
+        view.layoutIfNeeded()
         
         UIView.transition(with: self.view,
                           duration: TimeInterval(viewModel?.gameTime ?? 0),
@@ -168,10 +170,12 @@ class HomeVC: UIViewController {
             
             self?.translationTopConstraint?.constant = UIScreen.main.bounds.height
             self?.view.layoutIfNeeded()
-        } completion: { [weak self] _ in
-            self?.translationTopConstraint?.constant = -30
-            self?.view.layoutIfNeeded()
         }
+        
+    }
+    
+    private func stopAnimation() {
+        translationLabel.layer.removeAllAnimations()
     }
     
     private func makeButtons() {
@@ -179,18 +183,18 @@ class HomeVC: UIViewController {
                                 for: .touchUpInside)
         
         bottomStack.addArrangedSubview(correctButton)
-
+        
         wrongButton.addTarget(self, action: #selector(wrongTapped),
                               for: .touchUpInside)
         
         bottomStack.addArrangedSubview(wrongButton)
-
+        
         bottomStack.spacing = margin
-
+        
         view.addSubview(bottomStack)
         
         let margins = view.layoutMarginsGuide
-
+        
         NSLayoutConstraint.activate([
             bottomStack.heightAnchor.constraint(equalToConstant: 40.0),
             
@@ -208,28 +212,40 @@ class HomeVC: UIViewController {
         ])
     }
     
+    fileprivate func showFinishMatch() {
+        let result = viewModel?.resultMatch ?? ""
+        
+        delegateAppCoordinator?
+            .gameFinished(message: result) { [weak self] _ in
+                self?.startGame()
+            }
+        
+    }
+    
     // MARK: - Binding
     private func setupBindings() {
-
+        
         viewModel?.$correctAttempts
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] correctAttempts in
                 self?.topScoreView.setValue(score: correctAttempts, isCorrect: true)
             })
             .store(in: &bindings)
-
+        
         viewModel?.$wrongAttempts
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] wrongAttempts in
                 self?.topScoreView.setValue(score: wrongAttempts, isCorrect: false)
             })
             .store(in: &bindings)
-
+        
         viewModel?.$currentWord
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] currentWord in
                 if currentWord != nil {
+                    self?.stopAnimation()
                     self?.setWord(currentWord)
+                    self?.startAnimation()
                 }
             })
             .store(in: &bindings)
@@ -238,31 +254,37 @@ class HomeVC: UIViewController {
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] isFinished in
                 if isFinished {
-                    self?.delegateAppCoordinator?.stopGame()
+                    self?.stopGame()
+                    self?.showFinishMatch()
                 }
             })
             .store(in: &bindings)
     }
-
+    
+    private func stopGame() {
+        viewModel?.stopGame()
+        translationLabel.isHidden = true
+        stopAnimation()
+    }
+    
+    private func startGame() {
+        translationLabel.isHidden = false
+        viewModel?.resetGame()
+    }
+    
     private func setWord(_ word: RandomWord?) {
         translationLabel.text = word?.spanish
         wordLabel.text = word?.english
-        startAnimation()
     }
     
-    private func reset() {
-        translationLabel.isHidden = true
-    }
-
     // MARK: - Selectors
     @objc private func correctTapped() {
         viewModel?.answer(isCorrect: true)
         viewModel?.restTimer()
     }
-
+    
     @objc private func wrongTapped() {
         viewModel?.answer(isCorrect: false)
         viewModel?.restTimer()
     }
 }
-

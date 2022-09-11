@@ -19,6 +19,10 @@ class HomeViewModel {
 
     let gameTime: Int = 5
     
+    var resultMatch: String {
+        return "\(NSLocalizedString("yourScore", comment: "yourScore")): \(correctAttempts)"
+    }
+    
     private let randomWordGameLogic: RandomWordGameLogic
     private let totalQuestions = 15
     private let validWrongAttempts = 3
@@ -63,6 +67,10 @@ class HomeViewModel {
     
     func restTimer() {
         secondsRemaining = gameTime
+    }
+    
+    func stopGame() {
+        timer?.invalidate()
     }
     
     private func startTimer() {
