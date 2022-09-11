@@ -36,9 +36,6 @@ class AppCoordinator: Coordinator {
             
             navigation.pushViewController(vc, animated: false)
             
-        } catch let error as GameError {
-            showError(message: error.desc)
-            
         } catch {
             showError(message: error.localizedDescription)
         }

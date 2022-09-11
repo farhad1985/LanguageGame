@@ -164,9 +164,9 @@ class HomeVC: UIViewController {
         translationTopConstraint?.constant = -30
         view.layoutIfNeeded()
         
-        UIView.transition(with: self.view,
+        UIView.transition(with: self.translationLabel,
                           duration: TimeInterval(viewModel?.gameTime ?? 0),
-                          options: .curveLinear) { [weak self] in
+                          options: .curveEaseInOut) { [weak self] in
             
             self?.translationTopConstraint?.constant = UIScreen.main.bounds.height
             self?.view.layoutIfNeeded()
@@ -212,7 +212,7 @@ class HomeVC: UIViewController {
         ])
     }
     
-    fileprivate func showFinishMatch() {
+    private func showFinishMatch() {
         let result = viewModel?.resultMatch ?? ""
         
         delegateAppCoordinator?

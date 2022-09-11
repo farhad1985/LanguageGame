@@ -31,6 +31,8 @@
 		C44A370528CCAF5200ADA544 /* MockWordReposiory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A370428CCAF5200ADA544 /* MockWordReposiory.swift */; };
 		C44A370928CCB3B500ADA544 /* DefaultRandomWordLogicTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A370828CCB3B500ADA544 /* DefaultRandomWordLogicTest.swift */; };
 		C44A370C28CCC78A00ADA544 /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A370B28CCC78A00ADA544 /* HomeViewModelTest.swift */; };
+		C44A370F28CDDCB500ADA544 /* GameErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A370E28CDDCB500ADA544 /* GameErrorTest.swift */; };
+		C44A371128CDE21700ADA544 /* EmptyWords.json in Resources */ = {isa = PBXBuildFile; fileRef = C44A371028CDE21700ADA544 /* EmptyWords.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		C44A370428CCAF5200ADA544 /* MockWordReposiory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWordReposiory.swift; sourceTree = "<group>"; };
 		C44A370828CCB3B500ADA544 /* DefaultRandomWordLogicTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRandomWordLogicTest.swift; sourceTree = "<group>"; };
 		C44A370B28CCC78A00ADA544 /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
+		C44A370E28CDDCB500ADA544 /* GameErrorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameErrorTest.swift; sourceTree = "<group>"; };
+		C44A371028CDE21700ADA544 /* EmptyWords.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyWords.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 		C44A36B328CA4E8700ADA544 /* LanguageGameTests */ = {
 			isa = PBXGroup;
 			children = (
+				C44A370D28CDDCA200ADA544 /* Game Error */,
 				C44A370A28CCC77800ADA544 /* HomeViewModel */,
 				C44A370328CCAF4B00ADA544 /* Helper */,
 				C44A370628CCB39700ADA544 /* Repo */,
@@ -248,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				C44A370428CCAF5200ADA544 /* MockWordReposiory.swift */,
+				C44A371028CDE21700ADA544 /* EmptyWords.json */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -274,6 +280,14 @@
 				C44A370B28CCC78A00ADA544 /* HomeViewModelTest.swift */,
 			);
 			path = HomeViewModel;
+			sourceTree = "<group>";
+		};
+		C44A370D28CDDCA200ADA544 /* Game Error */ = {
+			isa = PBXGroup;
+			children = (
+				C44A370E28CDDCB500ADA544 /* GameErrorTest.swift */,
+			);
+			path = "Game Error";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C44A371128CDE21700ADA544 /* EmptyWords.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C44A370F28CDDCB500ADA544 /* GameErrorTest.swift in Sources */,
 				C44A36B528CA4E8700ADA544 /* RepositoryTest.swift in Sources */,
 				C44A370928CCB3B500ADA544 /* DefaultRandomWordLogicTest.swift in Sources */,
 				C44A370528CCAF5200ADA544 /* MockWordReposiory.swift in Sources */,

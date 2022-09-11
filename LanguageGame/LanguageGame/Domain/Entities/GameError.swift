@@ -11,7 +11,7 @@ enum GameError: LocalizedError {
     case notResource
     case parseWordlist
     
-    var desc: String {
+    public var errorDescription: String? {
         switch self {
         case .notResource:
             return NSLocalizedString("notResourceError",
