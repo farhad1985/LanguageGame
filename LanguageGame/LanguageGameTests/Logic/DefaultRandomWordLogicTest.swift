@@ -10,6 +10,12 @@ import XCTest
 
 class DefaultRandomWordLogicTest: XCTestCase {
     
+    func testIntializeLogic() throws {
+        // arragment
+        let repo = MockWordReposiory()
+        let _ = try DefaultRandomWordLogic(repo: repo)
+    }
+    
     func testResetRemainingIndexes() {
         do {
             // arragment
@@ -19,7 +25,7 @@ class DefaultRandomWordLogicTest: XCTestCase {
             // action
             let allwords = try repo.loadWords()
             let _ = sut.fetchNewWord()
-            sut.resetRemainingIndexes()
+            sut.resetWords()
             
             // assert
             XCTAssertEqual(sut.remainingIndexes.count, allwords.count)

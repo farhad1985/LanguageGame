@@ -21,7 +21,7 @@ class DefaultRandomWordLogic: RandomWordGameLogic {
             throw error
         }
         
-        resetRemainingIndexes()
+        resetWords()
     }
     
     func fetchNewWord() -> RandomWord? {
@@ -36,18 +36,14 @@ class DefaultRandomWordLogic: RandomWordGameLogic {
         return nil
     }
     
-    func resetWords() {
-        self.resetRemainingIndexes()
-    }
-    
-    func resetRemainingIndexes()  {
+    func resetWords()  {
         let lastIndex = max(self.allWords.count - 1, 0)
         self.remainingIndexes = Array(0...lastIndex)
     }
     
     func pickCorrentWordPair() -> Word? {
         if remainingIndexes.count == 0 {
-            resetRemainingIndexes()
+            resetWords()
         }
         
         if let word = remainingIndexes.randomElement() {

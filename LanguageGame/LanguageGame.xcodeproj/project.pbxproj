@@ -32,7 +32,6 @@
 		C44A370928CCB3B500ADA544 /* DefaultRandomWordLogicTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A370828CCB3B500ADA544 /* DefaultRandomWordLogicTest.swift */; };
 		C44A370C28CCC78A00ADA544 /* HomeViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A370B28CCC78A00ADA544 /* HomeViewModelTest.swift */; };
 		C44A370F28CDDCB500ADA544 /* GameErrorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A370E28CDDCB500ADA544 /* GameErrorTest.swift */; };
-		C44A371128CDE21700ADA544 /* EmptyWords.json in Resources */ = {isa = PBXBuildFile; fileRef = C44A371028CDE21700ADA544 /* EmptyWords.json */; };
 		C44A371428CDE4F500ADA544 /* AppCoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A371328CDE4F500ADA544 /* AppCoordinatorTest.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,7 +82,6 @@
 		C44A370828CCB3B500ADA544 /* DefaultRandomWordLogicTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRandomWordLogicTest.swift; sourceTree = "<group>"; };
 		C44A370B28CCC78A00ADA544 /* HomeViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTest.swift; sourceTree = "<group>"; };
 		C44A370E28CDDCB500ADA544 /* GameErrorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameErrorTest.swift; sourceTree = "<group>"; };
-		C44A371028CDE21700ADA544 /* EmptyWords.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyWords.json; sourceTree = "<group>"; };
 		C44A371328CDE4F500ADA544 /* AppCoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -256,7 +254,6 @@
 			isa = PBXGroup;
 			children = (
 				C44A370428CCAF5200ADA544 /* MockWordReposiory.swift */,
-				C44A371028CDE21700ADA544 /* EmptyWords.json */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -416,7 +413,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C44A371128CDE21700ADA544 /* EmptyWords.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
